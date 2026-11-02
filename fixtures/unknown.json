@@ -1,0 +1,17 @@
+{
+  "resource_changes": [
+    {
+      "address": "aws_instance.from_module",
+      "type": "aws_instance",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "tags": {"Owner": "platform-team", "CostCenter": "cc-100"}
+        },
+        "after_unknown": {
+          "instance_type": true
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "required_tags": ["Owner", "CostCenter"],
+  "allowed_instance_types": ["t3.micro", "t3.small", "t3.medium"]
+}

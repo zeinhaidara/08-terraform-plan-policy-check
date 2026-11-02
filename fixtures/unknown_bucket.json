@@ -1,0 +1,17 @@
+{
+  "resource_changes": [
+    {
+      "address": "aws_s3_bucket.generated",
+      "type": "aws_s3_bucket",
+      "change": {
+        "actions": ["create"],
+        "after": {
+          "tags": {"Owner": "platform-team", "CostCenter": "cc-100"}
+        },
+        "after_unknown": {
+          "bucket": true
+        }
+      }
+    }
+  ]
+}
