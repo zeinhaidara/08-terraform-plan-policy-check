@@ -54,6 +54,12 @@ class CheckPlanTests(unittest.TestCase):
         self.assertEqual(len(unknown), 1)
         self.assertIn("instance_type", unknown[0])
 
+    def test_unknown_bucket_name_is_reported(self):
+        violations, unknown = self.run_checks(load_fixture("unknown_bucket.json"))
+        self.assertEqual(violations, [])
+        self.assertEqual(len(unknown), 1)
+        self.assertIn("bucket", unknown[0])
+
 
 if __name__ == "__main__":
     unittest.main()

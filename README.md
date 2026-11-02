@@ -34,10 +34,14 @@ python check_plan.py plan.json --policy policy.json
 | Created or updated resources must have `Owner` and `CostCenter` tags | Untagged resources can't be attributed for ownership or billing | Check the planned `tags` map for both keys |
 | `aws_instance` type must be in the allow list | Keeps instance sizes (and cost) within what's approved | Compare planned `instance_type` against `policy.json` |
 
+The public access block resource is itself subject to the tag rule, since it is a created
+resource like any other and the policy doesn't carve out exceptions by resource type.
+
 ## Status
 
 Tested with unittest and hand-written plan fixtures only. Not run against a real
-Terraform plan.
+Terraform plan. The test suite has six tests; the sixth, covering an unknown bucket
+name, was added beyond the five called for in the original spec.
 
 ## Limits
 
