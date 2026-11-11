@@ -1,4 +1,4 @@
-# terraform-plan-policy-check
+# Terraform plan policy check
 
 ## Problem
 
@@ -43,7 +43,7 @@ Tested with unittest and hand-written plan fixtures only. Not run against a real
 Terraform plan. The test suite has six tests; the sixth, covering an unknown bucket
 name, was added beyond the five called for in the original spec.
 
-## Limits
+## Known limitations
 
 - Only planned values are checked, not provider defaults.
 - Cost thresholds are not included, so Infracost is out of scope.

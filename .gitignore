@@ -1,3 +1,5 @@
 .instruction/
 __pycache__/
 *.pyc
+*.tfplan
+memory/
