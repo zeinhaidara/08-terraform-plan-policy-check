@@ -1,5 +1,7 @@
 # Terraform plan policy check
 
+A dependency-free Python script that checks a Terraform plan JSON against a few policy rules and exits 1 on any violation.
+
 ## Problem
 
 Terraform plans that break policy are usually only discovered after `apply`, when the
@@ -24,6 +26,14 @@ flowchart LR
 terraform plan -out=plan.tfplan
 terraform show -json plan.tfplan > plan.json
 python check_plan.py plan.json --policy policy.json
+```
+
+Run the same checks as CI (Python 3 standard library only, no Terraform or AWS needed):
+
+```
+python -m unittest discover -s tests
+python check_plan.py fixtures/pass.json --policy policy.json   # exit 0
+python check_plan.py fixtures/fail.json --policy policy.json   # exit 1, lists the violations
 ```
 
 ## Rules
